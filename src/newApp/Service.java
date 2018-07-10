@@ -46,6 +46,17 @@ public class Service {
 			      return "Account Not Blocked";
 			    }
 			  }
+	 
+	 public int searchByFirstName(String name) {
+		 int counter = 0;
+		 for (String acc : accountMap.keySet()) {
+			    if(accountMap.get(acc).getFirstName().equals(name)) {
+			    	counter++;
+			    }
+
+			}
+		 return counter;
+	 }
 	
 	
 

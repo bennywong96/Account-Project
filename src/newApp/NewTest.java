@@ -40,7 +40,21 @@ public class NewTest {
     public void blockedAccountTest() throws AccountBlockedException {
 		thrown.expect(AccountBlockedException.class);
 		service.getBlockedAccount("123456");
-     
+	}
+	
+	@Test
+    public void countingFirstNames() {
+		Account account2 = new Account("Bob", "AA", "2");
+		Account account3 = new Account("Benny", "BB", "3");
+		Account account4 = new Account("Benny", "CC", "4");
+		service.addAccount(account2);
+		service.addAccount(account3);
+		service.addAccount(account4);
+		int numberBenny =service.searchByFirstName("Benny");
+		Assert.assertEquals(numberBenny, 3);
+		System.out.println("Number of Benny: " + numberBenny);
+		
+		
 	}
 	
 	
