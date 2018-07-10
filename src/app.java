@@ -17,7 +17,9 @@ public class app {
 		
 		
 		JSONObject newJSON = service.convertJSON();
+		String newXML = service.getXML();
 		System.out.println(newJSON);
+		System.out.println(newXML);
 		
 		System.out.println("Hello World to the standard out");
 		
