@@ -48,14 +48,7 @@ public class Service {
 			  }
 	 
 	 public int searchByFirstName(String name) {
-		 int counter = 0;
-		 for (String acc : accountMap.keySet()) {
-			    if(accountMap.get(acc).getFirstName().equals(name)) {
-			    	counter++;
-			    }
-
-			}
-		 return counter;
+		return (int) accountMap.values().stream().filter(v -> v.getFirstName().equals(name)).count();
 	 }
 	
 	
